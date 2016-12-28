@@ -1,0 +1,22 @@
+<resources>
+    <string name="app_name">Silence</string>
+    <string name="action_settings">Settings</string>
+    <string name="action_new_sentence">New sentence…</string>
+    <string name="action_up">Move up</string>
+    <string name="action_down">Move down</string>
+    <string name="action_delete">Delete sentence</string>
+    <string name="action_reset">Reset list…</string>
+    <string-array name="word_list">
+        <item>Hi!</item>
+        <item>Bye-bye!</item>
+        <item>Fuck you!</item>
+        <item>Thank you!</item>
+        <item>Yes</item>
+        <item>No</item>
+        <item>Sorry…</item>
+    </string-array>
+    <string name="title_activity_show">Show Activity</string>
+    <string name="explanation_already">This sentence is in list already</string>
+    <string name="explanation_reset">Do you want to reset this list to default? You cannot undo this.</string>
+
+</resources>
