@@ -2,23 +2,34 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     tools:context="com.kalinasoft.silence.WordActivity">
+    <item
+        android:id="@+id/action_download"
+        android:title="@string/action_download" />
     <group>
-        <item android:title="@string/action_down"
+        <item
             android:id="@+id/action_down"
             android:icon="@android:drawable/arrow_down_float"
+            android:title="@string/action_down"
             app:showAsAction="always" />
-        <item android:title="@string/action_up"
+        <item
             android:id="@+id/action_up"
             android:icon="@android:drawable/arrow_up_float"
+            android:title="@string/action_up"
             app:showAsAction="always" />
     </group>
-    <item android:title="@string/action_delete"
+    <item
         android:id="@+id/action_delete"
-        android:icon="@android:drawable/ic_input_delete" />
-    <item android:title="@string/action_new_sentence"
+        android:icon="@android:drawable/ic_input_delete"
+        android:title="@string/action_delete" />
+    <item
         android:id="@+id/action_add"
-        android:icon="@android:drawable/ic_menu_add" />
-    <item android:title="@string/action_reset"
+        android:icon="@android:drawable/ic_menu_add"
+        android:title="@string/action_new_sentence" />
+    <item
+        android:id="@+id/action_clear"
+        android:title="@string/action_clear" />
+    <item
         android:id="@+id/action_reset"
-        android:icon="@android:drawable/ic_menu_revert" />
+        android:icon="@android:drawable/ic_menu_revert"
+        android:title="@string/action_reset" />
 </menu>

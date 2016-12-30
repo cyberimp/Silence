@@ -15,8 +15,25 @@
         <item>No</item>
         <item>Sorry…</item>
     </string-array>
+    <string-array name="languages" translatable="false">
+        <item>ru-RU</item>
+        <item>en-US</item>
+        <item>la</item>
+    </string-array>
+    <string-array name="languages_pretty">
+        <item>Russian</item>
+        <item>Low Gothic</item>
+        <item>High Gothic</item>
+    </string-array>
+
     <string name="title_activity_show">Show Activity</string>
     <string name="explanation_already">This sentence is in list already</string>
     <string name="explanation_reset">Do you want to reset this list to default? You cannot undo this.</string>
+    <string name="action_download">Download TTS files…</string>
+    <string name="action_done">Done!</string>
+    <string name="title_activity_loading">Loading</string>
+    <string name="word_activity_title">Sentence List</string>
+    <string name="action_clear">Clear TTS cache…</string>
+    <string name="explanation_clear">Do you want to clear TTS cache? You cannot undo this.</string>
 
 </resources>

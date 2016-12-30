@@ -1,30 +1,32 @@
 package com.kalinasoft.silence;
 
+import android.Manifest;
 import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
+import android.media.AudioManager;
+import android.os.Build;
 import android.os.Bundle;
+import android.os.Environment;
 import android.support.design.widget.FloatingActionButton;
-import android.support.design.widget.Snackbar;
 import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.text.InputType;
-import android.util.Log;
-import android.view.View;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.EditText;
 import android.widget.ListView;
 import android.widget.Toast;
 
+import java.io.File;
 import java.io.FileInputStream;
 import java.io.FileOutputStream;
 import java.io.ObjectInputStream;
 import java.io.ObjectOutputStream;
-import java.lang.reflect.Array;
 import java.util.ArrayList;
 import java.util.Arrays;
 
@@ -42,6 +44,13 @@ public class WordActivity extends AppCompatActivity {
         setContentView(R.layout.activity_word);
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
+
+        setVolumeControlStream(AudioManager.STREAM_MUSIC);
+
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
+            requestPermissions(new String[]{Manifest.permission.READ_EXTERNAL_STORAGE}, 1);
+        }
+
 
         lv = (ListView) findViewById(R.id.list);
 
@@ -168,6 +177,16 @@ public class WordActivity extends AppCompatActivity {
                 deleteItem();
                 return true;
 
+            case R.id.action_download:
+                Intent wordInt = new Intent(WordActivity.this, Loading.class);
+                String[] s = new String[adapter.getCount()];
+                for (int i = 0; i < adapter.getCount(); i++) {
+                    s[i] = adapter.getItem(i);
+                }
+                wordInt.putExtra("word_list", s);
+                startActivity(wordInt);
+                return true;
+
             case R.id.action_reset:
                 final AlertDialog.Builder alert = new AlertDialog.Builder(this);
                 alert.setTitle(R.string.action_reset);
@@ -187,6 +206,29 @@ public class WordActivity extends AppCompatActivity {
                     }
                 });
                 alert.show();
+
+                return true;
+
+            case R.id.action_clear:
+                final AlertDialog.Builder clearalert = new AlertDialog.Builder(this);
+                clearalert.setTitle(R.string.action_clear);
+                clearalert.setMessage(R.string.explanation_clear);
+                clearalert.setPositiveButton(android.R.string.ok, new DialogInterface.OnClickListener() {
+                    public void onClick(DialogInterface dialog, int whichButton) {
+                        File dir = new File(String.valueOf(getExternalFilesDir(Environment.DIRECTORY_DOWNLOADS)));
+                        if (dir.isDirectory()) {
+                            String[] children = dir.list();
+                            for (String aChildren : children) {
+                                new File(dir, aChildren).delete();
+                            }
+                        }
+                    }
+                });
+                clearalert.setNegativeButton(android.R.string.cancel, new DialogInterface.OnClickListener() {
+                    public void onClick(DialogInterface dialog, int whichButton) {
+                    }
+                });
+                clearalert.show();
 
                 return true;
 
