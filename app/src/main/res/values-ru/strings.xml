@@ -28,5 +28,6 @@
     <string name="action_download">Загрузить данные говорилки…</string>
     <string name="title_activity_loading">Загрузка</string>
     <string name="word_activity_title">Список фраз</string>
-    <string name="action_clear">Очистить кеш говорилки...</string>
+    <string name="action_clear">Очистить кеш говорилки…</string>
+    <string name="explanation_clear">Вы действительно хотите очистить кеш говорилки? Это действие нельзя отменить.</string>
 </resources>
