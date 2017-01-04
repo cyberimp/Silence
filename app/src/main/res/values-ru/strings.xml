@@ -20,7 +20,7 @@
     <string name="action_down">Переместить вниз</string>
     <string name="action_new_sentence">Добавить предложение…</string>
     <string name="action_reset">Откатить список…</string>
-    <string name="action_up">Переместить вниз</string>
+    <string name="action_up">Переместить вверх</string>
     <string name="explanation_already">Это предложение уже есть в списке</string>
     <string name="explanation_reset">Вы действительно хотите очистить список? Это действие нельзя отменить.</string>
     <string name="title_activity_show">Ты тоже это видишь?</string>

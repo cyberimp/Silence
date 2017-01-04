@@ -33,8 +33,10 @@
         </activity>
         <activity
             android:name=".Loading"
+            android:configChanges="keyboardHidden|orientation|screenSize"
             android:label="@string/title_activity_loading"
             android:parentActivityName=".WordActivity"
+            android:screenOrientation="portrait"
             android:theme="@style/AppTheme">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
